@@ -37,46 +37,58 @@ public class bp {
 
 
     }
-    public int unpark(int n)
-    {
-        if(qnumber(n)==0 && q0.contains(n))
-        {q0.remove(n);
-        return (100*qnumber(n)+n);}
+    public String unpark(int n){
+        if(contains(n)==null)
+        return new String("Car not found imposter");
+        contains(n).remove(n);
+        return new String("Bye");
 
-        else if(qnumber(n)==1 && q1.contains(n))
-        {q1.remove(n);
-        return (100*qnumber(n)+n);}
-
-        else  if(qnumber(n)==2 && q2.contains(n))
-        {q2.remove(n);
-        return (100*qnumber(n)+n);}
-        else  if(qnumber(n)==3 && q3.contains(n))
-        {q3.remove(n);
-        return (100*qnumber(n)+n);}
-
-        else  if( q4.contains(n))
-        {q4.remove(n);
-        return (100*qnumber(n)+n);}
-        else return -1;
 
     }
-    public void displaystatus(){
-    for(int i:q0)
-    System.out.print(i+" ");
-    System.out.println();
-    for(int i:q1)
-    System.out.print(i+" ");
-    System.out.println();
-    for(int i:q2)
-    System.out.print(i+" ");
-    System.out.println();
-    for(int i:q3)
-    System.out.print(i+" ");
-    System.out.println();
-    for(int i:q4)
-    System.out.print(i+" ");
-    System.out.println();
+    public Queue<Integer> contains(int n)
+    {
+        if(qnumber(n)==0 && q0.contains(n))
+        {
+        return q0; }
 
+        else if(qnumber(n)==1 && q1.contains(n))
+        {
+        return q1;}
+
+        else  if(qnumber(n)==2 && q2.contains(n))
+        {
+        return q2;}
+        else  if(qnumber(n)==3 && q3.contains(n))
+        {
+        return q3;}
+
+        else  if( qnumber(n)==4 && q4.contains(n))
+        {
+        return q4;}
+        else return null;
+
+    }
+    public int[][] displaystatus(){
+        int arr[][]=new int[5][10];
+    int count=0;
+    for(int i:q0)
+    arr[0][count++]=i;
+     count=0;
+    for(int i:q1)
+    arr[1][count++]=i;
+    count=0;
+    for(int i:q2)
+    arr[2][count++]=i;
+    count=0;
+    for(int i:q3)
+    arr[3][count++]=i;
+    count=0;
+    for(int i:q4)
+    arr[4][count++]=i;
+    count=0;
+    return arr;
+
+        
     }
     public int qnumber(int n)
     {
