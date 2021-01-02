@@ -14,29 +14,6 @@ public class bp {
     Queue<Integer> q4= new LinkedList<>();
     
     
-    public String park(int n)
-    {   
-        
-        if(qnumber(n)==0 && q0.size()<10)
-        { q0.add(n);
-       return new String("ok");}
-        else if(qnumber(n)==1 && q1.size()<10)
-        {q1.add(n);
-       return new String("ok");}
-        else if(qnumber(n)==2 && q2.size()<10)
-        {q2.add(n);
-       return new String("ok");}
-        else if(qnumber(n)==3 && q3.size()<10)
-       { q3.add(n);
-       return new String("ok");}
-        else if(qnumber(n) ==4 && q4.size()<10)
-        {q4.add(n);
-       return new String("ok");}
-        else 
-        return new String("full hai");
-
-
-    }
     public String unpark(int n){
         if(contains(n)==null)
         return new String("Car not found imposter");
@@ -101,9 +78,6 @@ public class bp {
                 else if(n%5==3)
                 return 3;
                 else return 4;
-        
-            
-        
     }
     
 
